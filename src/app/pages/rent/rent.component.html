@@ -1,0 +1,68 @@
+<!-- <input type="text" [attr.placeholder]="placeholder" >
+<button (click)="togglePlaceHolder()" > toggle placeholder</button>
+<p appHighlight>Highlight me!</p> -->
+
+
+
+<div class="container well content">
+	<div class="row">
+		<div class="col-lg-12">
+			<h2 class="pull-left section-title">
+
+				<span>Book Lists</span>
+				
+			</h2>
+		</div>
+	</div>
+	
+	<input type="text" class="form-control" placeholder="filter by" ngModel="query">
+	<div class="well" style="overflow-x: auto;" >
+	    <table class="table">
+	      <thead>
+	    
+	        <tr>
+	          <th>#</th>
+	          <th>Name</th>
+	          <th>Address</th>
+	          <th>Contact Person</th>
+	          <th>Phone NO</th>
+	          <th>TIN</th>
+	          <th>Medical Discount </th>
+	          <th>Card Discount </th>
+	          <th>Card Amount </th>
+	          <th>Institute Type</th>
+	           <th>Payment Mode</th>
+	           <th>Category</th>
+	           
+	          <th style="width: 36px;"></th>
+	        </tr>
+	      </thead>
+	      <tbody><tr *ngFor="let m of getAllUnrentedBooks()">
+            <td>{{m.title}} </td>
+        </tr>
+	        <!-- <tr ng-repeat="m in medicals | filter:query">
+	          <td>{{$index +1}}</td>
+	          <td>{{m.name}} </td>
+	          <td>{{m.address}}</td>
+	          <td>{{m.contactPerson}}</td>
+	           <td>{{m.phoneNo}}</td>
+	           <td>{{m.tin}}</td>
+	           <td>{{m.discountMedical}}</td>
+	           <td>{{m.discountCard}}</td>
+	           <td>{{m.cardAmount}}</td>
+	           <td>{{m.instituteType}}</td>
+	          <td>{{m.paymentMode}}</td> 
+	          <td>{{m.category}}</td>
+	          
+	           <td>
+	           
+	           </td>
+	           <td>
+	           <a href="#/medicalRequest/request/medical/{{m.name}}/{{m.category}}/{{m.paymentMode}}"  class="btn btn-primary pull-right btn-sm" style="padding: 5px 10px; font-size: 10px; ">Request</a>
+	           </td>
+	           </tr> -->
+	      </tbody>
+	    </table>
+	</div>
+ 
+</div>
