@@ -7,6 +7,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { RentComponent } from './pages/rent/rent.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { ViewrequestComponent } from './pages/viewrequest/viewrequest.component';
 
 export const routes: Routes = [
   { path: 'login', component:LoginComponent},
@@ -23,6 +24,9 @@ export const routes: Routes = [
     ],
   },
   { path: 'signup', component: SignupComponent,data:{name:'test name', password:'test pass'}},
- 
+  //Edit Components
+  { path: 'dashboard/rent/:id', component: ViewrequestComponent },
+  //{ path: 'medicalRequest/request/medical/:id/:category/:paymentMode', component: YourComponent }, multi paramereters
+  // other routes...
   {path:'**', component:PageNotFoundComponent}
 ];

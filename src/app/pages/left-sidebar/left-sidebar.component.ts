@@ -38,6 +38,7 @@ export class LeftSidebarComponent {
       icon: 'fal fa-file',
       label: 'Rented Lists',
     },
+    
   ];
 
   toggleCollapse(): void {
