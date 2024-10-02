@@ -1,2 +1,65 @@
+<!-- 
+<div *ngIf="bookData">
+    <h2>Book Details</h2>
+    <p><strong>Title:</strong> {{ bookData.title }}</p>
+    <p><strong>Author:</strong> {{ bookData.author }}</p>
+  
+  </div>
+  
+  <div *ngIf="!bookData">
+    <p>Loading book details...</p>
+  </div> -->
 
-<p>viewrequest works!</p>
+
+  <div *ngIf="bookData"  class="modal fade claim-modal" id="modal"  style="position: fixed;" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" >
+    <div class="modal-dialog modal-md" role="document">
+   <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" style="color: green;">Enter Total amount</h4>
+          </div>
+          <div class="modal-body">
+                 <div >
+                   <div class="alert alert-dismissible alert-danger" ng-show="errors.data">
+                         <strong>Errors!</strong> <br/>
+                         <ul>
+                             <!-- <li ng-repeat="(key, value) in merror.data">{{value}}</li> -->
+                         </ul>
+                   </div>
+              </div>
+              <div>
+                  <div class="alert alert-dismissible alert-success"
+                      ng-show="successM">
+                      <strong>Success</strong> <br />
+                      <ul>
+                          <li ng-bind="successM" >successM</li>
+                      </ul>
+                  </div>
+              </div>
+          
+           <form class="form-group">
+           <div class="col-sm-4 form-group " ><!-- ng-show="empasume.movementReason!='Annual Increment' " -->
+             <label style="color: orange;">Total Amount</label>
+             <input id="name" type="text" placeholder="discounted amount" class="form-control" >
+               
+            </div>
+            
+            <div class="col-sm-4 form-group " ><!-- ng-show="empasume.movementReason!='Annual Increment' " -->
+             <label style="color: orange;">Checker Comment</label>
+             <input id="name" type="text" placeholder="Checker Comment" class="form-control"  >
+               
+            </div>
+           
+              
+           </form>
+          </div>
+          <div class="row">
+          <div class="modal-footer">
+          <button type="button" class="btn btn-primary" ng-click="saveClaimCheckMedical(chk)" access="USER" ng-disAbled="successM " onclick="this.disabled=true" >Save </button>
+              <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
+              
+          </div>
+          </div>
+      </div>
+</div>
+</div>

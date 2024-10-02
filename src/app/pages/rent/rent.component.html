@@ -66,11 +66,24 @@
 	           <td>
 				<!-- <a [routerLink]="['/medicalRequest/request/medical', m.id, m.category, m.paymentMode]"  -->
 	           <!-- <a href="#/medicalRequest/request/medical/{{m.id}}/{{m.category}}/{{m.paymentMode}}"  class="btn btn-primary pull-right btn-sm" style="padding: 5px 10px; font-size: 10px; ">Request</a> -->
-			   <a [routerLink]="['/dashboard/rent/', m.id]" 
+			   <!-- <button [routerLink]="['/dashboard/rent/', m.id]" ></button> -->
+				<div class="modal" id="modal">
+     <div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Modal Heading</h4>
+				<button type="button" class="btn-close" (click)="modalCloseByDocument()" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="modal-body">Modal Body..</div>
+			<div class="modal-footer"><button type="button" class="btn btn-danger">Close</button></div>
+		</div>
+	 </div>
+				</div>
+			   <button 
 			   class="btn btn-primary pull-right btn-sm" 
-			   style="padding: 5px 10px; font-size: 10px;">
+			   style="padding: 5px 10px; font-size: 10px;"  (click)="requestRent(m.id)">
 			   Request
-			</a>
+			</button>
 	           </td>
 	           </tr>
 	      </tbody>

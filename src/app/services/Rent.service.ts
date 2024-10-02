@@ -6,6 +6,7 @@ import { Rent } from "../models/Rent";
 @Injectable({providedIn:'root'})
 export class RentService{
   http:HttpClient= inject(HttpClient);
+
   private apiUrl = `http://localhost:8080/api`;
   headers:HttpHeaders=new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`)
 
@@ -20,7 +21,9 @@ getBooks(){
   }
 
   //Method to add Rent data to the database table
-  addRent(){
+  addRent(rent:Rent){
+
+    return this.http.post(`${this.apiUrl}/rentBook`,rent);
 
   }
 
