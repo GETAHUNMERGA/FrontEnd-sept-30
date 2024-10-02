@@ -9,7 +9,7 @@
 		<div class="col-lg-12">
 			<h2 class="pull-left section-title">
 
-				<span>Book Lists</span>
+				<span>Select From Book Lists</span>
 				
 			</h2>
 		</div>
@@ -22,35 +22,41 @@
 	    
 	        <tr>
 	          <th>#</th>
-	          <th>Name</th>
-	          <th>Address</th>
-	          <th>Contact Person</th>
-	          <th>Phone NO</th>
-	          <th>TIN</th>
-	          <th>Medical Discount </th>
-	          <th>Card Discount </th>
-	          <th>Card Amount </th>
-	          <th>Institute Type</th>
+	          <th>Author</th>
+	          <th>Tittle</th>
+	          <th>Type</th>
+	          <th>Total Copies</th>
+	          <th>Editions</th>
+	          <th>ISBN </th>
+	          <th>Publication Date</th>
+	          <th>RegistrationDate</th>
+	          <th>genre</th>
 	           <th>Payment Mode</th>
 	           <th>Category</th>
 	           
 	          <th style="width: 36px;"></th>
 	        </tr>
 	      </thead>
-	      <tbody><tr *ngFor="let m of getAllUnrentedBooks()">
+	      <tbody>
+			<!-- <div *ngIf="getUnrentedBooks">
+				<h2>Data from the API:</h2>
+				<pre>{{ getUnrentedBooks | json }}</pre>
+				</div> -->
+			<!-- <tr *ngFor="let m of getUnrentedBooks">
             <td>{{m.title}} </td>
-        </tr>
-	        <!-- <tr ng-repeat="m in medicals | filter:query">
-	          <td>{{$index +1}}</td>
-	          <td>{{m.name}} </td>
-	          <td>{{m.address}}</td>
-	          <td>{{m.contactPerson}}</td>
-	           <td>{{m.phoneNo}}</td>
-	           <td>{{m.tin}}</td>
-	           <td>{{m.discountMedical}}</td>
-	           <td>{{m.discountCard}}</td>
-	           <td>{{m.cardAmount}}</td>
-	           <td>{{m.instituteType}}</td>
+        </tr> -->
+		<tr *ngFor="let m of getUnrentedBooks;let index = index">
+	        <!-- <tr ng-repeat="m in getUnrentedBooks | filter:query"> -->
+	          <td>{{index +1}}</td>
+	          <td>{{m.author}} </td>
+	          <td>{{m.title}}</td>
+	          <td>{{m.type}}</td>
+	           <td>{{m.numberOfCopies}}</td>
+	           <td>{{m.edition}}</td>
+	           <td>{{m.iSBN}}</td>
+	           <td>{{m.publicationDate}}</td>
+	           <td>{{m.registrationDate}}</td>
+	           <td>{{m.genre}}</td>
 	          <td>{{m.paymentMode}}</td> 
 	          <td>{{m.category}}</td>
 	          
@@ -58,9 +64,28 @@
 	           
 	           </td>
 	           <td>
-	           <a href="#/medicalRequest/request/medical/{{m.name}}/{{m.category}}/{{m.paymentMode}}"  class="btn btn-primary pull-right btn-sm" style="padding: 5px 10px; font-size: 10px; ">Request</a>
+				<!-- <a [routerLink]="['/medicalRequest/request/medical', m.id, m.category, m.paymentMode]"  -->
+	           <!-- <a href="#/medicalRequest/request/medical/{{m.id}}/{{m.category}}/{{m.paymentMode}}"  class="btn btn-primary pull-right btn-sm" style="padding: 5px 10px; font-size: 10px; ">Request</a> -->
+			   <!-- <button [routerLink]="['/dashboard/rent/', m.id]" ></button> -->
+				<div class="modal" id="modal">
+     <div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Modal Heading</h4>
+				<button type="button" class="btn-close" (click)="modalCloseByDocument()" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="modal-body">Modal Body..</div>
+			<div class="modal-footer"><button type="button" class="btn btn-danger">Close</button></div>
+		</div>
+	 </div>
+				</div>
+			   <button 
+			   class="btn btn-primary pull-right btn-sm" 
+			   style="padding: 5px 10px; font-size: 10px;"  (click)="requestRent(m.id)">
+			   Request
+			</button>
 	           </td>
-	           </tr> -->
+	           </tr>
 	      </tbody>
 	    </table>
 	</div>

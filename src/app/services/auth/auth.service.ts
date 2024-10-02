@@ -22,7 +22,7 @@ export class AuthService {
       })
       .pipe(
         tap((response) => {
-          console.log(response)
+          console.log(response);
           this.token = response.body?.token;
           this.saveToken(this.token!);
         }),

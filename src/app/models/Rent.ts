@@ -3,7 +3,7 @@ export class Rent{
         public  id:number,
         public  bookId:number,
         public  clientId:number,
-        public  rentDate:string,
+        public  rentDate:Date,
         public  dueDate:Date,
         public  returnDate:Date,
         public  rentAmount:number,
